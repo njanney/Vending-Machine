@@ -7,7 +7,7 @@ import java.util.Date;
  *  Requires Fortune.java, Happy.java, Sad.java, Angry.java.
  *  Makes use of TextJFrame.java
  * 
- * <br>Name: Nicholas Janney
+ * <br>Names: Andrea Martinez, Nick Janney, Ronnie Saenz, Jen-Ryann Ngo-Antonio 
  * <br>Date: Nov 8 2022
  *
  * @author nicho

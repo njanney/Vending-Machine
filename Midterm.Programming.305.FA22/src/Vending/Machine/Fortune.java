@@ -5,10 +5,10 @@
 package Vending.Machine;
 
 /**
- *  This is my definition of the abstract class called Fortune
+ *  This is our definition of the abstract class called Fortune
  * This class is used only in TestVendingMachine.java
  * 
- * <br>Name: Nicholas Janney
+ * <br>Names: Andrea Martinez, Nick Janney, Ronnie Saenz, Jen-Ryann Ngo-Antonio 
  * <br>Date: Nov 8 2022
  *
  * @author nicho
