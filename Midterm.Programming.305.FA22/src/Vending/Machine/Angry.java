@@ -15,13 +15,15 @@ package Vending.Machine;
  * @author nicho
  */
 
-public abstract class Angry extends Fortune{
+public class Angry extends Fortune{
     private String fortune;
     private String emotion;
     
+    @Override
     public String getFortune(){
         return fortune;
     }
+    @Override
     public String setFortune(String fortune){
         this.fortune = fortune;
         return fortune;

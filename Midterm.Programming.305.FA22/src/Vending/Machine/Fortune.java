@@ -19,7 +19,7 @@ public abstract class Fortune extends Object{
     private String emotion;
     
     public abstract String getFortune();
-    public abstract String setFortune();
+    public abstract String setFortune(String fortune);
     
     @Override
     public String toString() {
@@ -32,6 +32,5 @@ public abstract class Fortune extends Object{
             throw new java.lang.RuntimeException("compareTo: Empty Object!");
         Fortune other = (Fortune) obj;
         return (fortune.equals(other.fortune) && emotion.equals(other.emotion));
-    }
-    
+    } 
 }

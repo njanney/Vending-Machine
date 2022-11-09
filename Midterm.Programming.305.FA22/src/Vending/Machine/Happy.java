@@ -15,7 +15,7 @@ package Vending.Machine;
  * @author nicho
  */
 
-public abstract class Happy extends Fortune{
+public class Happy extends Fortune{
     private String fortune;
     private String emotion;
     
