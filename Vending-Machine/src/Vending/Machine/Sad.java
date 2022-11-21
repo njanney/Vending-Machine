@@ -43,6 +43,7 @@ public class Sad extends Fortune{
             boolean mode = false;
             int count = 0;
             File myObj = new File("database.txt");
+            System.out.println(myObj.getAbsolutePath());
             Scanner myReader = new Scanner(myObj);
             while (myReader.hasNextLine()) {
                 if (mode == false){

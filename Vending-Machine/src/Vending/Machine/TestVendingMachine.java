@@ -19,9 +19,6 @@ public class TestVendingMachine extends Object {
                 new Date().toString() + "\n");
         win.Append2TextArea("Output of TestVendingMachine ...\n");
         
-        Sad fortune = new Sad();
-        System.out.println(fortune);
-        
         win.setVisible(true);
     }
 }

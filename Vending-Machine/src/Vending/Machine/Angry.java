@@ -3,6 +3,10 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package Vending.Machine;
+import java.io.*;
+import java.util.Scanner;
+import java.util.Random;
+import java.util.ArrayList;
 
 /**
  *  This is our definition of the subclass called Angry
@@ -19,6 +23,51 @@ public class Angry extends Fortune{
     private String fortune;
     private String emotion;
     
+    public Angry () {
+        emotion = "ANGRY";
+        /*
+        This is the constructor for ANGRY fortunes, which requires no parameters
+        Each constructor uses a similar algorithm for fetching a fortune from the database
+        
+        This algorithm reads the file line for line until it finds the ANGRY section
+        Then stores each fortune in that section into an ArrayList of Strings
+        Once it reaches the end of the section, or reaches RANDOM, then terminates file reading
+        Lastly, we generate a random int based on the number of ANGRY fortunes
+        And save the fortune corresponding to that int in our ArrayList
+        
+        If there is an error in fortune fetching, or the file read is unsucessfull,
+        The fortune is stored as "Error!"
+        */
+        try{
+            ArrayList<String> fortunes = new ArrayList<>();
+            boolean mode = false;
+            int count = 0;
+            File myObj = new File("database.txt");
+            System.out.println(myObj.getAbsolutePath());
+            Scanner myReader = new Scanner(myObj);
+            while (myReader.hasNextLine()) {
+                if (mode == false){
+                    String data = myReader.nextLine();
+                    System.out.println(data);
+                    if (data.equals("ANGRY")) {mode = true;}
+                }
+                else {
+                    String data = myReader.nextLine();
+                    System.out.println(data);
+                    fortunes.add(data);
+                    if (data.equals("RANDOM")) {break;}
+                }
+            } 
+            Random rand = new Random();
+            int random = rand.nextInt(count);
+            fortune = fortunes.get(random);
+        }
+        catch (IOException e){
+            System.out.println("File read error! " + e);
+            fortune = "Error!";
+        }
+    }
+    
     @Override
     public String getFortune(){
         return fortune;
@@ -31,7 +80,7 @@ public class Angry extends Fortune{
     
     @Override
     public String toString() {
-        return "";
+        return "Your " + emotion + " fortune is: " + fortune;
     }
     
     @Override
