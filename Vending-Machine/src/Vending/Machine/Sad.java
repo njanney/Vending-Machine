@@ -24,6 +24,19 @@ public class Sad extends Fortune{
     private String emotion;
     
     public Sad () {
+        /*
+        This is the constructor for Sad fortunes, which requires no parameters
+        Each constructor uses a similar algorithm for fetching a fortune from the database
+        
+        This algorithm reads the file line for line until it finds the SAD section
+        Then stores each fortune in that section into an ArrayList of Strings
+        Once it reaches the end of the section, or reaches ANGRY, then terminates file reading
+        Lastly, we generate a random int based on the number of sad fortunes
+        And save the fortune corresponding to that int in our ArrayList
+        
+        If there is an error in fortune fetching, or the file read is unsucessfull,
+        The fortune is stored as "Error!"
+        */
         emotion = "SAD";
         try{
             ArrayList<String> fortunes = new ArrayList<>();

@@ -20,7 +20,7 @@ public class TestVendingMachine extends Object {
         win.Append2TextArea("Output of TestVendingMachine ...\n");
         
         Sad fortune = new Sad();
-        System.out.println(fortune);
+        win.Append2TextArea(fortune.toString());
         
         win.setVisible(true);
     }
