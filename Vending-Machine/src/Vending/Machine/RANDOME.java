@@ -9,7 +9,7 @@ import java.util.Random;
 import java.util.ArrayList;
 
 /**
- *  This is our definition of the subclass called Happy
+ *  This is our definition of the subclass called Random
  * This class extends from parent class Fortune.java
  * This class is used only in TestVendingMachine.java
  * 
@@ -19,20 +19,20 @@ import java.util.ArrayList;
  * @author nicho
  */
 
-public class Happy extends Fortune{
+public class RANDOME extends Fortune{
     private String fortune;
     private String emotion;
     
-    public Happy () {
-        emotion = "HAPPY";
+    public RANDOME () {
+        emotion = "RANDOM";
         /*
-        This is the constructor for HAPPY fortunes, which requires no parameters
+        This is the constructor for RANDOM fortunes, which requires no parameters
         Each constructor uses a similar algorithm for fetching a fortune from the database
         
-        This algorithm reads the file line for line until it finds the HAPPY section
+        This algorithm reads the file line for line until it finds the RANDOM section
         Then stores each fortune in that section into an ArrayList of Strings
-        Once it reaches the end of the section, or reaches SAD, then terminates file reading
-        Lastly, we generate a random int based on the number of HAPPY fortunes
+        Once it reaches the end of the file, terminate file reading
+        Lastly, we generate a random int based on the number of RANDOM fortunes
         And save the fortune corresponding to that int in our ArrayList
         
         If there is an error in fortune fetching, or the file read is unsucessfull,
@@ -49,13 +49,12 @@ public class Happy extends Fortune{
                 if (mode == false){
                     String data = myReader.nextLine();
                     System.out.println(data);
-                    if (data.equals("HAPPY")) {mode = true;}
+                    if (data.equals("RANDOM")) {mode = true;}
                 }
                 else {
                     String data = myReader.nextLine();
                     System.out.println(data);
                     fortunes.add(data);
-                    if (data.equals("SAD")) {break;}
                 }
             } 
             Random rand = new Random();
@@ -87,7 +86,7 @@ public class Happy extends Fortune{
     public boolean equals(Object obj) {
         if (getClass() != obj.getClass())
             throw new java.lang.RuntimeException("compareTo: Empty Object!");
-        Happy other = (Happy) obj;
+        RANDOME other = (RANDOME) obj;
         return (fortune.equals(other.fortune) && emotion.equals(other.emotion));
     }
     

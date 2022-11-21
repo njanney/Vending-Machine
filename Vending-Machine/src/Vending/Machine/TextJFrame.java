@@ -24,8 +24,8 @@ public class TextJFrame extends javax.swing.JFrame {
      */
     public TextJFrame(String title, String info) {
         initComponents();
-		// Read-only-TextArea
-        jTextArea1.setEditable(false);
+	// Read-only-TextArea
+        jTextField1.setEditable(false);
         centerFrame();
         this.setTitle(title);
 	//Destroy this JFrame when the user close the window
@@ -43,7 +43,7 @@ public class TextJFrame extends javax.swing.JFrame {
         this.setLocation(screenSize.width/4, screenSize.height/4);
     }
     public void Append2TextArea(String text){
-        jTextArea1.append(text);
+        jTextField1.setText(text);
     }
     /**
      * This method is called from within the constructor to initialize the form.
@@ -85,10 +85,25 @@ public class TextJFrame extends javax.swing.JFrame {
         });
 
         jButton2.setText("Sad");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         jButton3.setText("Angry");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
 
         jButton4.setText("Random");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
 
         jTextField1.setText("jTextField1");
         jTextField1.addActionListener(new java.awt.event.ActionListener() {
@@ -188,12 +203,32 @@ public class TextJFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem1ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
+        // This is the HAPPY button on the display
+        Happy fortune = new Happy();
+        jTextField1.setText(fortune.toString());
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
-        // TODO add your handling code here:
+        // TODO : implementation
     }//GEN-LAST:event_jTextField1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // This is the SAD button on the display
+        Sad fortune = new Sad();
+        jTextField1.setText(fortune.toString());
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        // This is the RANDOM button on the display
+        RANDOME fortune = new RANDOME();
+        jTextField1.setText(fortune.toString());
+    }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        // This is the ANGRY button on the display
+        Angry fortune = new Angry();
+        jTextField1.setText(fortune.toString());
+    }//GEN-LAST:event_jButton3ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
