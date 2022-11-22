@@ -25,7 +25,7 @@ public class TextJFrame extends javax.swing.JFrame {
     public TextJFrame(String title, String info) {
         initComponents();
 		// Read-only-TextArea
-        jTextArea1.setEditable(false);
+       
         centerFrame();
         this.setTitle(title);
 	//Destroy this JFrame when the user close the window
@@ -43,7 +43,7 @@ public class TextJFrame extends javax.swing.JFrame {
         this.setLocation(screenSize.width/4, screenSize.height/4);
     }
     public void Append2TextArea(String text){
-        jTextArea1.append(text);
+        
     }
     /**
      * This method is called from within the constructor to initialize the form.
