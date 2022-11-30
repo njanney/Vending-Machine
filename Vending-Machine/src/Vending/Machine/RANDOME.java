@@ -36,34 +36,49 @@ public class RANDOME extends Fortune{
         And save the fortune corresponding to that int in our ArrayList
         
         If there is an error in fortune fetching, or the file read is unsucessfull,
-        The fortune is stored as "Error!"
+        The fortune is a defualt fortune, and the error is sent to the terminal
         */
         try{
             ArrayList<String> fortunes = new ArrayList<>();
             boolean mode = false;
-            int count = 0;
             File myObj = new File("database.txt");
-            System.out.println(myObj.getAbsolutePath());
             Scanner myReader = new Scanner(myObj);
             while (myReader.hasNextLine()) {
-                if (mode == false){
-                    String data = myReader.nextLine();
-                    System.out.println(data);
-                    if (data.equals("RANDOM")) {mode = true;}
+                String data = myReader.nextLine();
+                if (mode == false){ 
+                    /*
+                    If we are currently reading fortunes,
+                    but we are not in the right section of the database,
+                    wait until we reach the correct section 
+                    to start saving the fortunes in our ArrayList
+                    */
+                    if (data.equals("RANDOM")) {
+                        mode = true;
+                    }
                 }
                 else {
-                    String data = myReader.nextLine();
-                    System.out.println(data);
+                    /*
+                    Since RANDOM fortunes are at the end of the database
+                    There is no need to check for the end of the file
+                    */
                     fortunes.add(data);
                 }
-            } 
+            }
+            myReader.close();
             Random rand = new Random();
-            int random = rand.nextInt(count);
+            // Generate a random int based on the size of the ArrayList
+            // Use that random int to pick a fortune index from the ArrayList
+            int random = rand.nextInt(fortunes.size());
             fortune = fortunes.get(random);
         }
         catch (IOException e){
+            /*
+            If there is a file read error
+            Send the error to the console
+            and give the user a default fortune
+            */
             System.out.println("File read error! " + e);
-            fortune = "Error!";
+            fortune = "You are my 13th reason";
         }
     }
     

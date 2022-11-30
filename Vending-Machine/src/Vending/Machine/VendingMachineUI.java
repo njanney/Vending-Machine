@@ -127,12 +127,14 @@ public class VendingMachineUI extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        jTextField1.setText("Be Happy");
+        Happy fortune = new Happy();
+        jTextField1.setText(fortune.getFortune());
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
-        jTextField1.setText("It'll get better");
+        Sad fortune = new Sad();
+        jTextField1.setText(fortune.getFortune());
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
@@ -141,12 +143,14 @@ public class VendingMachineUI extends javax.swing.JFrame {
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
-        jTextField1.setText("Let go of your anger");
+        Angry fortune = new Angry();
+        jTextField1.setText(fortune.getFortune());
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         // TODO add your handling code here:
-        jTextField1.setText("Are you a battery? Because you turn me on");
+        RANDOME fortune = new RANDOME();
+        jTextField1.setText(fortune.getFortune());
     }//GEN-LAST:event_jButton4ActionPerformed
 
     /**
@@ -177,7 +181,6 @@ public class VendingMachineUI extends javax.swing.JFrame {
         }
         //</editor-fold>
         //</editor-fold>
-
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
